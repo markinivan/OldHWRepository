@@ -17,5 +17,21 @@ int main() {
             z = z * z;
         }
         printf("%d\n", z);
-    }    else {        if (x == y && y == z) {            printf("все переменные равны\n");        }        else if (x == y) {            printf("x=y\n");        }        else if (x == z) {            printf("x=z\n");        }        else if (z == y) {            printf("z=y\n");        }    }    system("pause");
-    return 0;}
+    }
+    else {
+        if (x == y && y == z) {
+            printf("все переменные равны\n");
+        }
+        else if (x == y) {
+            printf("x=y\n");
+        }
+        else if (x == z) {
+            printf("x=z\n");
+        }
+        else if (z == y) {
+            printf("z=y\n");
+        }
+    }
+    system("pause");
+    return 0;
+}
