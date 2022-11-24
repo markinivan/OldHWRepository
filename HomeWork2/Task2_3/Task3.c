@@ -11,22 +11,58 @@ int main() {
 	scanf_s("%d", &fig);
 	printf("\nВведите позиции фигуры:\n");
 	printf("- старт:");
-	scanf_s("%c %d",&ks1s, &ks2);
-	printf("\n");
-	printf("- финиш::");
-	scanf_s("%c %d", &kf1s, &kf2);
+	getchar();
+	ks1s = getchar();
+	scanf_s("%d", &ks2);
+	printf("- финиш:");
+	getchar();
+	kf1s = getchar();
+	scanf_s("%d", &kf2);
+	ks1 = ks1s-96;
+	kf1 = kf1s - 96;
 	switch (fig) {
 	case 1:
+		if (abs(ks1 - kf1) <= 1 && abs(ks2 - kf2) <= 1) {
+			printf("Результат: корректный ход\n");
+		}
+		else {
+			printf("Результат: некорректный ход\n");
+		}
 		break;
 	case 2:
+		if ((ks1 == kf1 || ks2 == kf2) || (abs(ks1 - kf1) == abs(ks2 - kf2))) {
+			printf("Результат: корректный ход\n");
+		}
+		else {
+			printf("Результат: некорректный ход\n");
+		}
 		break;
 	case 3:
+		if (ks1==kf1 || ks2==kf2) {
+			printf("Результат: корректный ход\n");
+		}
+		else {
+			printf("Результат: некорректный ход\n");
+		}
 		break;
 	case 4:
+		if (abs(ks1 - kf1) == abs(ks2 - kf2)) {
+			printf("Результат: корректный ход\n");
+		}
+		else {
+			printf("Результат: некорректный ход\n");
+		}
 		break;
 	default:
+		if ((abs(ks1 - kf1) == 2 && abs(ks2 - kf2) == 1) || (abs(ks1 - kf1) == 1 && abs(ks2 - kf2) == 2)) {
+			printf("Результат: корректный ход\n");
+		}
+		else {
+			printf("Результат: некорректный ход\n");
+		}
 		break;
 	}
+	
 	system("pause");
 	return 0;
 }
